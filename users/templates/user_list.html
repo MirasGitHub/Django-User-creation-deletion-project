@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+</head>
+<body>
+    <h1>All Users</h1>
+    <ul>
+        {% for user in users %}
+            <li>
+
+                {% if user.profile_picture %}
+                    <img src="{{ user.profile_picture.url }}" alt="profile_picture">
+                {% endif %}
+                <br>
+                    <b>Name:</b>  {{ user.first_name }}
+                <br>
+                    <b>Last Name:</b> {{ user.last_name }}
+                <br>
+                    <b>Age:</b> {{ user.age }}
+                <br>
+                    <b>Date of Birth:</b> {{ user.date_of_birth }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
